@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, controllers: {
    sessions:      'admins/sessions',
    passwords:     'admins/passwords',
@@ -14,9 +14,9 @@ Rails.application.routes.draw do
    resources :orders, only: [:show, :update]
    resources :order_details, only: [:update]
   end
-  
-  
-  
+
+
+
   devise_for :publics, controllers: {
    sessions:      'publics/sessions',
    passwords:     'publics/passwords',
@@ -40,6 +40,6 @@ Rails.application.routes.draw do
    get 'orders/complete' => 'orders#complete'
    resources :addresses, only: [:index, :create, :destroy, :edit, :update]
   end
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
